@@ -1,0 +1,17 @@
+{
+    "name": "adforge-server",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "node index.js"
+    },
+    "dependencies": {
+        "express": "^4.21.0",
+        "cors": "^2.8.5",
+        "helmet": "^8.0.0",
+        "express-rate-limit": "^7.4.0",
+        "uuid": "^10.0.0"
+    }
+}

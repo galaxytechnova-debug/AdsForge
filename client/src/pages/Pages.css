@@ -1,0 +1,498 @@
+/* Shared styles for all dashboard sub-pages */
+
+/* ---------- Templates Page ---------- */
+.templates-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+}
+
+.templates-search {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius-md);
+    min-width: 280px;
+}
+
+.templates-search input {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    width: 100%;
+}
+
+.templates-search input::placeholder {
+    color: var(--input-placeholder);
+}
+
+.templates-categories {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-6);
+}
+
+.templates-category {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    cursor: pointer;
+    white-space: nowrap;
+    border: 1px solid var(--border-primary);
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.templates-category:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.templates-category.active {
+    background: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-4);
+}
+
+.template-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.template-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow);
+    border-color: var(--accent-primary);
+}
+
+.template-thumb {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.template-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.template-card:hover .template-overlay {
+    opacity: 1;
+}
+
+.template-info {
+    padding: var(--space-3) var(--space-4);
+}
+
+.template-info h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    margin-bottom: 2px;
+}
+
+.template-info span {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+}
+
+/* ---------- Projects Page ---------- */
+.projects-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-6);
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.projects-view-toggle {
+    display: flex;
+    gap: var(--space-1);
+    padding: var(--space-1);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+}
+
+.projects-view-toggle button {
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    color: var(--text-tertiary);
+    transition: all var(--transition-fast);
+}
+
+.projects-view-toggle button.active {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-xs);
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.project-list-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-list-item:hover {
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.project-list-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: var(--weight-bold);
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+}
+
+.project-list-info {
+    flex: 1;
+}
+
+.project-list-info h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+}
+
+.project-list-info span {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+}
+
+.project-list-actions {
+    display: flex;
+    gap: var(--space-2);
+}
+
+/* ---------- Brand Kits ---------- */
+.brand-kits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-6);
+}
+
+.brand-kit-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.brand-kit-card:hover {
+    box-shadow: var(--card-hover-shadow);
+    transform: translateY(-2px);
+    border-color: var(--accent-primary);
+}
+
+.brand-kit-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+}
+
+.brand-kit-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--weight-bold);
+    font-size: var(--text-xl);
+    color: white;
+}
+
+.brand-kit-colors {
+    display: flex;
+    gap: var(--space-2);
+    margin: var(--space-4) 0;
+}
+
+.brand-kit-color {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--border-primary);
+}
+
+.brand-kit-fonts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.brand-kit-font {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand-kit-new {
+    border: 2px dashed var(--border-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    color: var(--text-tertiary);
+    min-height: 200px;
+    font-size: var(--text-sm);
+    background: none;
+}
+
+.brand-kit-new:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background: var(--accent-primary-light);
+}
+
+/* ---------- Analytics ---------- */
+.analytics-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.analytics-chart-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-6);
+}
+
+.analytics-chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+}
+
+.analytics-chart-header h3 {
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+}
+
+.analytics-filters {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+}
+
+/* ---------- Team Page ---------- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+}
+
+.team-member-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    transition: all var(--transition-fast);
+}
+
+.team-member-card:hover {
+    box-shadow: var(--card-hover-shadow);
+}
+
+.team-member-info {
+    flex: 1;
+}
+
+.team-member-info h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    margin-bottom: 2px;
+}
+
+.team-member-info span {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+}
+
+.team-invite-card {
+    border: 2px dashed var(--border-primary);
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    color: var(--text-tertiary);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    min-height: 88px;
+    transition: all var(--transition-fast);
+}
+
+.team-invite-card:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background: var(--accent-primary-light);
+}
+
+/* ---------- Billing Page ---------- */
+.billing-current {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.billing-plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.billing-plan-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+}
+
+.billing-plan-card.current {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 1px var(--accent-primary);
+}
+
+.billing-plan-card:hover {
+    box-shadow: var(--card-hover-shadow);
+}
+
+/* ---------- Settings Page ---------- */
+.settings-section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-6);
+}
+
+.settings-section h3 {
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-secondary);
+}
+
+.settings-row:last-child {
+    border-bottom: none;
+}
+
+.settings-row-label h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    margin-bottom: 2px;
+}
+
+.settings-row-label p {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+}
+
+.settings-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+@media (max-width: 768px) {
+    .analytics-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .billing-plans {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .templates-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .templates-search {
+        min-width: unset;
+    }
+}
